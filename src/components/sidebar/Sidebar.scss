@@ -1,0 +1,52 @@
+@import '../../style/theme.scss';
+
+.side-nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    background: black;
+    width: 118px;
+    height: 100%;
+}
+
+.side-nav-btn {
+    height: 64px;
+    width: 64px;
+    margin: 0.5rem 0;
+}
+
+.side-nav-copyritghs {
+    position: absolute;
+    top: 85%;
+    color: white;
+    font-size: 12px;
+
+    transform: rotate(-90deg);
+    width: 196px;
+}
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .side-nav-container {
+        width: 72px;
+    }
+
+    .side-nav-btn {
+        height: 42px;
+        width: 42px;
+    }
+
+    .side-nav-copyritghs {
+        font-size: 12px;
+        margin-top: 8rem;
+        position: absolute;
+        top: 480px;
+    }
+}

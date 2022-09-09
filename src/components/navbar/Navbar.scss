@@ -1,0 +1,37 @@
+@import '../../style/theme.scss';
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 6rem 1rem 2rem;
+    background: black;
+    box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
+
+    height: 48px;
+}
+
+.nav-logo {
+    max-height: 64px;
+}
+
+.nav-btn {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: white;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+}
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .nav-container {
+        height: 36px;
+    }
+
+    .nav-btn {
+        font-size: 18px;
+    }
+}
