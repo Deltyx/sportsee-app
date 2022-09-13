@@ -2,19 +2,24 @@
 
 .dashboard-container {
     position: absolute;
-    left: 118px;
-    top: 80px;
+    left: 0;
+    top: 0;
+    z-index: -2;
 
-    height: calc(100% - 80px);
-    width: calc(100% - 118px);
+    height: 100%;
+    width: 100%;
+}
+
+.linechart-section {
+    height: 384px;
+    width: 384px;
+
+    position: absolute;
+    top: 20%;
+    left: 20%;
 }
 
 /* Small screen devices (780px and below) */
 @media only screen and (max-height: 780px) {
-    .dashboard-container {
-        top: 68px;
-        left: 72px;
-        height: calc(100% - 68px);
-        width: calc(100% - 72px);
-    }
+
 }

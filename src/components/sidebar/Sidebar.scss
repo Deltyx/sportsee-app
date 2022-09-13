@@ -3,7 +3,7 @@
 .side-nav-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     position: absolute;
@@ -12,24 +12,33 @@
     left: 0;
 
     background: black;
-    width: 118px;
+    width: 100px;
     height: 100%;
 }
 
 .side-nav-btn {
-    height: 64px;
-    width: 64px;
+    height: 56px;
+    width: 56px;
     margin: 0.5rem 0;
 }
 
 .side-nav-copyritghs {
-    position: absolute;
-    top: 85%;
     color: white;
     font-size: 12px;
 
-    transform: rotate(-90deg);
-    width: 196px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+
+    margin-bottom: 2rem;
+}
+
+.side-nav-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 16rem;
 }
 
 /* Small screen devices (780px and below) */
@@ -41,12 +50,5 @@
     .side-nav-btn {
         height: 42px;
         width: 42px;
-    }
-
-    .side-nav-copyritghs {
-        font-size: 12px;
-        margin-top: 8rem;
-        position: absolute;
-        top: 480px;
     }
 }
