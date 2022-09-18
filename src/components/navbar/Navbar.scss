@@ -1,37 +1,25 @@
-@import '../../style/theme.scss';
-
 .nav-container {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 6rem 1rem 2rem;
-    background: black;
-    box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
-
-    height: 48px;
+    align-items: center;
+    background-color: #020203;
+    height: 80px;
 }
 
 .nav-logo {
-    max-height: 64px;
+    height: 64px;
+    padding-left: 20px;
 }
 
-.nav-btn {
-    border: none;
-    background: none;
-    font-size: 22px;
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 0 64px;
+}
+
+.nav-links a {
     color: white;
-}
-
-.nav-btn:hover {
-    cursor: pointer;
-}
-
-/* Small screen devices (780px and below) */
-@media only screen and (max-height: 780px) {
-    .nav-container {
-        height: 36px;
-    }
-
-    .nav-btn {
-        font-size: 18px;
-    }
+    text-decoration: none;
+    font-size: 24px;
 }

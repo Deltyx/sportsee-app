@@ -1,14 +1,17 @@
 import './Dashboard.scss';
 
-import Radarchart from './../radarchart/Radarchart.js';
-import Linechart from '../linechart/Linechart.js';
+import Sidebar from '../sidebar/Sidebar.js';
+import Skills_Chart from '../radarchart/Skills_Chart.js';
+import Session_Duration_Chart from '../linechart/Session_Duration_Chart.js';
 
 
 export default function Dashboard() {
   return (
     <section className='dashboard-container'>
-      <div className='linechart-section'>
-        <Linechart />
+      <Sidebar />
+      <div className='dashboard-charts-container'>
+        <Session_Duration_Chart />
+        <Skills_Chart />
       </div>
     </section>
   );

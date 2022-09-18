@@ -14,7 +14,7 @@ export default function Sidebar() {
         <img src={side_icon_3} alt={side_icon_3} className='side-nav-btn' />
         <img src={side_icon_4} alt={side_icon_4} className='side-nav-btn' />
       </div>
-      <span className='side-nav-copyritghs'>Copiryght, SportSee 2020</span>
+      <span className='side-nav-copyritghs'>Copyright, SportSee 2020</span>
     </navbar>
   );
 }

@@ -3,16 +3,9 @@
 .side-nav-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
 
     background: black;
-    width: 100px;
+    width: 85px;
     height: 100%;
 }
 
@@ -30,15 +23,17 @@
     text-orientation: mixed;
     transform: rotate(180deg);
 
-    margin-bottom: 2rem;
+    position: relative;
+    left: 44%;
 }
 
 .side-nav-icon-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    margin-top: 16rem;
+    height: 80%;
 }
 
 /* Small screen devices (780px and below) */

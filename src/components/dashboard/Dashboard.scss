@@ -1,23 +1,16 @@
 @import '../../style/theme.scss';
 
 .dashboard-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -2;
+    display: flex;
 
     height: 100%;
     width: 100%;
 }
 
-.linechart-section {
-    height: 384px;
-    width: 384px;
-
-    position: absolute;
-    top: 20%;
-    left: 20%;
+.dashboard-charts-container {
+    margin: 4rem;
 }
+
 
 /* Small screen devices (780px and below) */
 @media only screen and (max-height: 780px) {
