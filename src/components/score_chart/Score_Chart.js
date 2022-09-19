@@ -11,13 +11,6 @@ const data = [
   },
 ];
 
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
-
 export default class Score_Chart extends PureComponent {
 
   render() {
