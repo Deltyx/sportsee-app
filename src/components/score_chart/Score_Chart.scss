@@ -1,0 +1,40 @@
+@import './../../style/theme.scss';
+
+.Score_Chart-wrapper {
+    position: relative;
+
+    height: 256px;
+    width: 256px;
+
+    background: $primary-background-color;
+
+    border-radius: 5px;
+}
+
+.Score_Chart-title {
+    position: absolute;
+    left: 1rem;
+    font-size: 18px;
+}
+
+.Score_Chart-score-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    left: 34%;
+}
+
+.Score_Chart-score {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.Score_Chart-score-text {
+    margin: 5px 0 0 0;
+    text-align: center;
+    color: #74798C;
+}
