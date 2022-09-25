@@ -1,0 +1,29 @@
+.Nutrition_Card-wrapper {
+    background-color: #FBFBFB;
+    padding: 8%;
+    display: flex;
+    width: 100%;
+}
+  
+.Nutrition_Card-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 1rem;
+}
+
+.Nutrition_Card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.Nutrition_Card-data {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.Nutrition_Card-type {
+    font-weight: 500;
+    font-size: 14px;
+}

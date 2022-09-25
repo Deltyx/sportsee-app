@@ -17,6 +17,15 @@
     gap: 1rem;
 }
 
+.nutrition_cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 4rem 0 4rem 0;
+    width: 15%;
+}
+
 
 /* Small screen devices (780px and below) */
 @media only screen and (max-height: 780px) {
