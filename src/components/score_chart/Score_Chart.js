@@ -1,15 +1,7 @@
 import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis  } from 'recharts';
 
 import './Score_Chart.scss';
-
-const data = [
-  {
-    score: 31.47,
-    pv: 2400,
-    fill: '#FF0000',
-  },
-];
 
 export default class Score_Chart extends PureComponent {
 
@@ -22,21 +14,23 @@ export default class Score_Chart extends PureComponent {
                 cx="50%" 
                 cy="50%" 
                 innerRadius="70%"  
-                data={data}
+                data={this.props.data}
                 startAngle={90} 
-                endAngle={450}
+                endAngle={-270}
             >
+            <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
             <RadialBar
                 minAngle={15}
                 background
                 cornerRadius={25}
-                barSize={8}
+                barSize={10}
                 dataKey="score"
+                fill='#FF0000'
             />
             </RadialBarChart>
         </ResponsiveContainer>
         <div className="Score_Chart-score-wrapper">
-            <p className="Score_Chart-score">100%</p>
+            <p className="Score_Chart-score">{this.props.score}%</p>
             <p className="Score_Chart-score-text">de votre<br/>objectif</p>
         </div>
     </div>

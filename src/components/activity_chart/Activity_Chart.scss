@@ -1,0 +1,53 @@
+@import './../../style/theme.scss';
+
+.Activity_Chart-wrapper {
+    height: 300px;
+    min-width: 512px;
+
+    background: $primary-background-color;
+    border-radius: 5px;
+
+    position: relative;
+    grid-column: span 3;
+
+    padding: 2rem;
+}
+
+.Activity_Chart-title {
+    position: absolute;
+    font-size: 16px;
+    color: #282d30;
+
+    top: 1rem;
+    left: 2rem;
+}
+
+.Activity_Chart-legend-wrapper {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.Activity_Chart-legend-wrapper > h2 {
+    font-size: 16px;
+    padding-left: 1rem;
+    color: #74798C;
+}
+
+.black-dot {
+    border-radius: 50px;
+    height: 8px;
+    width: 8px;
+    background: #282d30;
+}
+
+.red-dot {
+    border-radius: 50px;
+    height: 8px;
+    width: 8px;
+    background: #ff0000;
+    margin-left: 3rem;
+}
