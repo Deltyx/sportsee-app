@@ -41,7 +41,7 @@ const data = [
   * @returns the value when a dot on the line is pointed
 */
 
- function CustomToolTypeSessionDuration({payload, active}){
+function CustomToolTipSessionDuration({payload, active}){
   if(active){
       return (
           <div className='Session_Duration_Chart-tooltip'>
@@ -76,7 +76,7 @@ export default class Session_Duration_Chart extends PureComponent {
               stroke='rgba(255, 255, 255, 0.5)' 
             />
             <YAxis hide='true' domain={['dataMin', 'dataMax']} />
-            <Tooltip content={<CustomToolTypeSessionDuration />} cursor={false}/>
+            <Tooltip content={<CustomToolTipSessionDuration />} cursor={false}/>
             <Line 
               dataKey='sessionLength' 
               type='natural' 

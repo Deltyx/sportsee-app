@@ -56,6 +56,18 @@ const data = [
   },
 ];
 
+function CustomToolTipActivityChart({payload, active}){
+  if(active){
+      return (
+          <div className='Activity_Chart-tooltip'>
+              <div>{`${payload[0].value}`}kg</div>
+              <div>{`${payload[1].value}`}Kcal</div>
+          </div>
+      )
+  }
+  return null
+}
+
 export default class Activity_Chart extends PureComponent {
   render() {
     return (
@@ -90,7 +102,7 @@ export default class Activity_Chart extends PureComponent {
                     tickMargin='20'
                     width={55}
                 />
-                <Tooltip />
+                <Tooltip content={<CustomToolTipActivityChart />} cursor={false}/>
                 <Bar name='Poids (kg)' 
                     yAxisId="left" 
                     dataKey="kilogram" 
