@@ -34,6 +34,24 @@ const data = [
   },
 ];
 
+/**
+  * Format Tooltip
+  * @param {array} payload - source data
+  * @param {boolean} active - is Tootip active
+  * @returns the value when a dot on the line is pointed
+*/
+
+ function CustomToolTypeSessionDuration({payload, active}){
+  if(active){
+      return (
+          <div className='Session_Duration_Chart-tooltip'>
+              <div>{`${payload[0].value}`}min</div>
+          </div>
+      )
+  }
+  return null
+}
+
 export default class Session_Duration_Chart extends PureComponent {
   render() {
     return (
@@ -43,10 +61,10 @@ export default class Session_Duration_Chart extends PureComponent {
           <LineChart
             data={data}
             margin={{
-              top:60,
+              top:80,
               right:12,
               left:12,
-              bottom:50
+              bottom:35
           }}
           >
             <XAxis 
@@ -54,11 +72,11 @@ export default class Session_Duration_Chart extends PureComponent {
               axisLine={false} 
               tickLine={false}  
               tick={{fontSize: 12, fontWeight: 500}}
-              
+              tickMargin={40}
               stroke='rgba(255, 255, 255, 0.5)' 
             />
             <YAxis hide='true' domain={['dataMin', 'dataMax']} />
-            <Tooltip />
+            <Tooltip content={<CustomToolTypeSessionDuration />} cursor={false}/>
             <Line 
               dataKey='sessionLength' 
               type='natural' 
