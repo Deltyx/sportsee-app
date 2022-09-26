@@ -6,53 +6,53 @@ import './Activity_Chart.scss';
 const data = [
   {
     day: '1',
-    kilogram: 4000,
-    calories: 2400,
+    kilogram: 400,
+    calories: 240,
   },
   {
     day: '2',
-    kilogram: 3000,
-    calories: 1398,
+    kilogram: 300,
+    calories: 130,
   },
   {
     day: '3',
-    kilogram: 2000,
-    calories: 9800,
+    kilogram: 200,
+    calories: 980,
   },
   {
     day: '4',
-    kilogram: 2780,
-    calories: 3908,
+    kilogram: 278,
+    calories: 390,
   },
   {
     day: '5',
-    kilogram: 1890,
-    calories: 4800,
+    kilogram: 189,
+    calories: 480,
   },
   {
     day: '6',
-    kilogram: 2390,
-    calories: 3800,
+    kilogram: 239,
+    calories: 380,
   },
   {
     day: '7',
-    kilogram: 3490,
-    calories: 4300,
+    kilogram: 349,
+    calories: 430,
   },
   {
     day: '8',
-    kilogram: 3490,
-    calories: 4300,
+    kilogram: 349,
+    calories: 430,
   },
   {
     day: '9',
-    kilogram: 3490,
-    calories: 4300,
+    kilogram: 349,
+    calories: 430,
   },
   {
     day: '10',
-    kilogram: 3490,
-    calories: 4300,
+    kilogram: 349,
+    calories: 430,
   },
 ];
 
@@ -68,18 +68,27 @@ export default class Activity_Chart extends PureComponent {
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                 data={data}
-                margin={{top: 60}}
+                margin={{top: 90}}
                 >
                 <CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[90, 185]} />
-                <XAxis dataKey="day"  />
+                <XAxis 
+                  dataKey="day"  
+                  interval='preserveStartEnd' 
+                  tickSize='0' 
+                  tickMargin='15' 
+                />
                 <YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide='true'/>
                 <YAxis 
                     yAxisId="right" 
                     orientation="right" 
-                    stroke="#82ca9d" 
+                    type='number'
+                    stroke="#9B9EAC" 
                     axisLine={false}
+                    domain={['dataMin -1', 'dataMax']} 
+                    tickCount={3}
                     tickSize='0'
-                    tickMargin='30'
+                    tickMargin='20'
+                    width={55}
                 />
                 <Tooltip />
                 <Bar name='Poids (kg)' 

@@ -57,7 +57,7 @@ export default class Session_Duration_Chart extends PureComponent {
               
               stroke='rgba(255, 255, 255, 0.5)' 
             />
-            <YAxis hide='true' />
+            <YAxis hide='true' domain={['dataMin', 'dataMax']} />
             <Tooltip />
             <Line 
               dataKey='sessionLength' 
