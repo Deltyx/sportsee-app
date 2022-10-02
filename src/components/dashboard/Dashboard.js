@@ -17,6 +17,8 @@ import {getAPIUserDataMain, getAPIUserDataActivity, getAPIUserDataAverage, getAP
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
+import { performanceDataFormatter } from '../../services/dataFormatter';
+
 export default function Dashboard() {
 
   const {userId} = useParams()
@@ -28,42 +30,44 @@ export default function Dashboard() {
 
   let datasMocked = true
 
-  useEffect(()=>{
-      if(datasMocked === true){
-          const userDatas = USER_MAIN_DATA
-          const UserActivities = USER_ACTIVITY
-          const userSessionDurations = USER_AVERAGE_SESSIONS
-          const userPerformances = USER_PERFORMANCE
+  useEffect(() => {
+    if(datasMocked === true){
+      const userDatas = USER_MAIN_DATA
+      const UserActivities = USER_ACTIVITY
+      const userSessionDurations = USER_AVERAGE_SESSIONS
+      const userPerformances = USER_PERFORMANCE
 
-          const currentUserData = userDatas.find(userData => (userData.id).toString() === userId)
-          const currentUserActivity = UserActivities.find(userActivity => (userActivity.userId).toString() === userId)
-          const currentUserSessionDuration = userSessionDurations.find(userSessionDuration => (userSessionDuration.userId).toString() === userId)
-          const currentUserPerformance = userPerformances.find(userPerformance => (userPerformance.userId).toString() === userId)
+      const currentUserData = userDatas.find(userData => (userData.id).toString() === userId)
+      const currentUserActivity = UserActivities.find(userActivity => (userActivity.userId).toString() === userId)
+      const currentUserSessionDuration = userSessionDurations.find(userSessionDuration => (userSessionDuration.userId).toString() === userId)
+      const currentUserPerformance = userPerformances.find(userPerformance => (userPerformance.userId).toString() === userId)
 
-          setUserData(currentUserData)
-          setUserActivity(currentUserActivity)
-          setUserSessionDuration(currentUserSessionDuration)
-          setUserPerformance(currentUserPerformance)
-      }
-      else{
-        getAPIUserDataMain(userId)
-            .then(data => setUserData(data))
+      setUserData(currentUserData)
+      setUserActivity(currentUserActivity)
+      setUserSessionDuration(currentUserSessionDuration)
+      setUserPerformance(currentUserPerformance)
+    }
+    else{
+      getAPIUserDataMain(userId)
+          .then(data => setUserData(data))
 
-        getAPIUserDataActivity(userId)
-            .then((data) => setUserActivity(data))
+      getAPIUserDataActivity(userId)
+          .then((data) => setUserActivity(data))
 
-        getAPIUserDataAverage(userId)
-            .then((data) => setUserSessionDuration(data))
-    
-        getAPIUserDataPerformance(userId)
-            .then((data) => setUserPerformance(data))
-      }
-
+      getAPIUserDataAverage(userId)
+          .then((data) => setUserSessionDuration(data))
+  
+      getAPIUserDataPerformance(userId)
+          .then((data) => setUserPerformance(data))
+    }
   }, [userId, datasMocked])
 
   if((!userData) || (!userActivity) || (!userSessionDuration) || (!userPerformance)){
     return null
   }
+
+const dataReversed = performanceDataFormatter(userPerformance.data)
+
 
   return (
     <section className='dashboard-container'>
@@ -71,7 +75,7 @@ export default function Dashboard() {
       <div className='dashboard-charts-container'>
         <Activity_Chart />
         <Session_Duration_Chart />
-        <Skills_Chart />
+        <Skills_Chart data={dataReversed} />
         <Score_Chart data={[{score: userData.todayScore * 100}]} score={(userData.todayScore * 100).toString()}/>
       </div>
       <aside className='nutrition_cards-wrapper'>
