@@ -102,7 +102,7 @@ export default class Activity_Chart extends PureComponent {
                     tickMargin='20'
                     width={55}
                 />
-                <Tooltip content={<CustomToolTipActivityChart />} cursor={false}/>
+                <Tooltip wrapperStyle={{outline: "none"}} content={<CustomToolTipActivityChart />} cursor={false}/>
                 <Bar name='Poids (kg)' 
                     yAxisId="left" 
                     dataKey="kilogram" 

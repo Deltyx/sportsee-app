@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis  } from 'recharts';
+import PropTypes from 'prop-types';
 
 import './Score_Chart.scss';
 
@@ -36,4 +37,9 @@ export default class Score_Chart extends PureComponent {
     </div>
     );
   }
+}
+
+Score_Chart.propTypes={
+    data: PropTypes.array.isRequired,
+    score: PropTypes.string.isRequired
 }

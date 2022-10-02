@@ -73,10 +73,10 @@ export default class Session_Duration_Chart extends PureComponent {
               tickLine={false}  
               tick={{fontSize: 12, fontWeight: 500}}
               tickMargin={40}
-              stroke='rgba(255, 255, 255, 0.5)' 
+              stroke='rgba(255, 255, 255, 0.7)' 
             />
             <YAxis hide='true' domain={['dataMin', 'dataMax']} />
-            <Tooltip content={<CustomToolTipSessionDuration />} cursor={false}/>
+            <Tooltip wrapperStyle={{outline: "none"}} content={<CustomToolTipSessionDuration />}/>
             <Line 
               dataKey='sessionLength' 
               type='natural' 
