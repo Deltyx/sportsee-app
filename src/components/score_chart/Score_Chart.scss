@@ -9,6 +9,8 @@
     background: $primary-background-color;
 
     border-radius: 5px;
+    grid-column: 3;
+    grid-row: 3;
     justify-self: end;
     align-self: end;
 }

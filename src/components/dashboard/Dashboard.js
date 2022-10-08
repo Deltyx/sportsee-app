@@ -12,12 +12,13 @@ import CarbsIcon from '../../img/carbs-icon.svg';
 import FatIcon from '../../img/fat-icon.svg';
 import ProteinIcon from '../../img/protein-icon.svg';
 
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../../data/mockedData.js';
 import {getAPIUserDataMain, getAPIUserDataActivity, getAPIUserDataAverage, getAPIUserDataPerformance} from '../../services/fetch'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-import { performanceDataFormatter } from '../../services/dataFormatter';
+import { performanceDataFormatter, sessionDurationDataFormatter, activityDataFormatter } from '../../services/dataFormatter';
+import { userInfoBuilder } from '../../services/userInfoBuilder';
+import Title from '../title/Title';
 
 export default function Dashboard() {
 
@@ -28,56 +29,45 @@ export default function Dashboard() {
   const [userSessionDuration, setUserSessionDuration] = useState()
   const [userPerformance, setUserPerformance] = useState()
 
-  let datasMocked = true
-
   useEffect(() => {
-    if(datasMocked === true){
-      const userDatas = USER_MAIN_DATA
-      const UserActivities = USER_ACTIVITY
-      const userSessionDurations = USER_AVERAGE_SESSIONS
-      const userPerformances = USER_PERFORMANCE
+    getAPIUserDataMain(userId)
+        .then(data => setUserData(data))
 
-      const currentUserData = userDatas.find(userData => (userData.id).toString() === userId)
-      const currentUserActivity = UserActivities.find(userActivity => (userActivity.userId).toString() === userId)
-      const currentUserSessionDuration = userSessionDurations.find(userSessionDuration => (userSessionDuration.userId).toString() === userId)
-      const currentUserPerformance = userPerformances.find(userPerformance => (userPerformance.userId).toString() === userId)
+    getAPIUserDataActivity(userId)
+        .then((data) => setUserActivity(data))
 
-      setUserData(currentUserData)
-      setUserActivity(currentUserActivity)
-      setUserSessionDuration(currentUserSessionDuration)
-      setUserPerformance(currentUserPerformance)
-    }
-    else{
-      getAPIUserDataMain(userId)
-          .then(data => setUserData(data))
+    getAPIUserDataAverage(userId)
+        .then((data) => setUserSessionDuration(data))
 
-      getAPIUserDataActivity(userId)
-          .then((data) => setUserActivity(data))
-
-      getAPIUserDataAverage(userId)
-          .then((data) => setUserSessionDuration(data))
-  
-      getAPIUserDataPerformance(userId)
-          .then((data) => setUserPerformance(data))
-    }
-  }, [userId, datasMocked])
+    getAPIUserDataPerformance(userId)
+        .then((data) => setUserPerformance(data))
+  }, [userId])
 
   if((!userData) || (!userActivity) || (!userSessionDuration) || (!userPerformance)){
     return null
   }
 
-const dataReversed = performanceDataFormatter(userPerformance.data)
-
-
+  const dataReversed = performanceDataFormatter(userPerformance.data)
+  const sessionDurationData = sessionDurationDataFormatter(userSessionDuration.sessions)
+  const activityData = activityDataFormatter(userActivity.sessions)
+  const userInfo = new userInfoBuilder()
+                  .setId(userData.id)
+                  .setUserInfos(userData.userInfos)
+                  .setScore(userData.todayScore || userData.score)
+                  .setKeyData(userData.keyData)
+                  .build()
   return (
     <section className='dashboard-container'>
       <Sidebar />
       <div className='dashboard-charts-container'>
-        <Activity_Chart />
-        <Session_Duration_Chart />
+        <Title firstName={userInfo.userInfos.firstName}/>
+        <Activity_Chart data={activityData}/>
+        <Session_Duration_Chart  data={sessionDurationData} />
         <Skills_Chart data={dataReversed} />
-        <Score_Chart data={[{score: userData.todayScore * 100}]} score={(userData.todayScore * 100).toString()}/>
-      </div>
+        <Score_Chart 
+          data={[{score: userInfo.score * 100}]} 
+          score={(userInfo.score * 100).toString()}
+        />
       <aside className='nutrition_cards-wrapper'>
         <Nutrition_Card 
           icon={CaloriesIcon} 
@@ -104,6 +94,7 @@ const dataReversed = performanceDataFormatter(userPerformance.data)
           type='Lipides'
         />
       </aside>
+      </div>
     </section>
   );
 }

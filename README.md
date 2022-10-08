@@ -1,8 +1,60 @@
-# Getting Started with Create React App
+![logo](https://user-images.githubusercontent.com/76209231/169522099-204659eb-76cb-4da7-a7f9-df91211fef56.svg)
+
+# SportSee
+
+Startup dedicated to sport coaching.\
+Work on a new version of the user profile page with sports analytics dashboard.
+
+![library-react](https://user-images.githubusercontent.com/76209231/169810015-87e342f6-ce87-4033-8e16-8194630f88e0.svg)
+![library-recharts](https://user-images.githubusercontent.com/76209231/169810257-b16891a3-8f04-4e3c-8e3a-68a81e8f642b.svg)
+![tool-create-react-app](https://user-images.githubusercontent.com/76209231/169812977-cf802d09-7b36-4b2c-97ab-143955aef1fa.svg)
+![tool-sass](https://user-images.githubusercontent.com/76209231/169813018-fb083b76-0ea4-4a9c-816a-19786ccdd023.svg)
+
+
+
+# 1. Launching the project
+
+## 1.1 Prerequisites
+
+* [NodeJS (version 12.18)](https://nodejs.org/en/) to run npm command
+or
+* [Yarn](https://yarnpkg.com/)
+
+
+## 1.2 Installing the project
+
+### Launching Back-End
+
+1. Clone the repo of the back-end
+
+    `git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
+2. Install the dependencies by running the command 
+
+    `yarn` (or `yarn install`) or `npm i` (or `npm install`)
+3. Launch the back-end on port 3000 (http://localhost:3000) by running the command 
+
+    `yarn dev` or `npm run start`
+
+### Launching Front-End
+
+1. Clone the repo of the front-end
+
+    `git clone https://github.com/July-github/SportSee.git`
+2. Install the dependencies by running the command 
+
+    `yarn` (or `yarn install`) or `npm i` (or `npm install`)
+3. Launch the front-end on port 3001 (http://localhost:3001) by running the command 
+
+    `yarn start` or `npm start`
+
+*Currently, there are 2 users (user 12 & user 18)*
+
+
+# 2. Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 2.1 Available Scripts
 
 In the project directory, you can run:
 
@@ -39,32 +91,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# 3. Learn more 
+### Recharts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[A composable charting library built on React components](https://recharts.org/en-US/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Sass
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[CSS extension language](https://sass-lang.com/)

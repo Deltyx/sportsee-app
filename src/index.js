@@ -16,11 +16,6 @@ root.render(
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/user/:userId" element={<Dashboard />} />
-        <Route path="/user/:userId/activity" element={<Dashboard />} />
-        <Route path="/user/:userId/average-sessions" element={<Dashboard />} />
-        <Route path="/user/:userId/today-score" element={<Dashboard />} />
-        <Route path="/user/:userId/activities" element={<Dashboard />} />
-        <Route path="/user/:userId/key-data" element={<Dashboard />} />
       </Routes>
     </Router>
   </React.StrictMode>

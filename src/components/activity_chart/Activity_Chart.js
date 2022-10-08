@@ -1,60 +1,15 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 import './Activity_Chart.scss';
 
-const data = [
-  {
-    day: '1',
-    kilogram: 400,
-    calories: 240,
-  },
-  {
-    day: '2',
-    kilogram: 300,
-    calories: 130,
-  },
-  {
-    day: '3',
-    kilogram: 200,
-    calories: 980,
-  },
-  {
-    day: '4',
-    kilogram: 278,
-    calories: 390,
-  },
-  {
-    day: '5',
-    kilogram: 189,
-    calories: 480,
-  },
-  {
-    day: '6',
-    kilogram: 239,
-    calories: 380,
-  },
-  {
-    day: '7',
-    kilogram: 349,
-    calories: 430,
-  },
-  {
-    day: '8',
-    kilogram: 349,
-    calories: 430,
-  },
-  {
-    day: '9',
-    kilogram: 349,
-    calories: 430,
-  },
-  {
-    day: '10',
-    kilogram: 349,
-    calories: 430,
-  },
-];
+/**
+  * Format Tooltip
+  * @param {array} payload - source data
+  * @param {boolean} active - is Tootip active
+  * @returns the value when a column on the graph is pointed
+*/
 
 function CustomToolTipActivityChart({payload, active}){
   if(active){
@@ -79,7 +34,7 @@ export default class Activity_Chart extends PureComponent {
             </div>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
-                data={data}
+                data={this.props.data}
                 margin={{top: 90}}
                 >
                 <CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[90, 185]} />
@@ -96,7 +51,7 @@ export default class Activity_Chart extends PureComponent {
                     type='number'
                     stroke="#9B9EAC" 
                     axisLine={false}
-                    domain={['dataMin -1', 'dataMax']} 
+                    domain={[0, 'auto']} 
                     tickCount={3}
                     tickSize='0'
                     tickMargin='20'
@@ -122,4 +77,8 @@ export default class Activity_Chart extends PureComponent {
         </div>
     );
   }
+}
+
+Activity_Chart.propTypes={
+  data: PropTypes.array.isRequired
 }

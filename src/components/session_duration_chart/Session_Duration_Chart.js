@@ -1,38 +1,8 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 import './Session_Duration_Chart.scss';
-
-const data = [
-  {
-    day: 'L',
-    sessionLength: 4000,
-  },
-  {
-    day: 'M',
-    sessionLength: 3000,
-  },
-  {
-    day: 'M',
-    sessionLength: 2000,
-  },
-  {
-    day: 'J',
-    sessionLength: 2780,
-  },
-  {
-    day: 'V',
-    sessionLength: 1890,
-  },
-  {
-    day: 'S',
-    sessionLength: 2390,
-  },
-  {
-    day: 'D',
-    sessionLength: 3490,
-  },
-];
 
 /**
   * Format Tooltip
@@ -59,7 +29,7 @@ export default class Session_Duration_Chart extends PureComponent {
         <h2 className='Session_Duration_Chart-title'>Durée moyenne des sessions</h2>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
-            data={data}
+            data={this.props.data}
             margin={{
               top:80,
               right:12,
@@ -89,4 +59,8 @@ export default class Session_Duration_Chart extends PureComponent {
       </div>
     );
   }
+}
+
+Session_Duration_Chart.propTypes={
+  data: PropTypes.array.isRequired,
 }
