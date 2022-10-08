@@ -35,9 +35,9 @@ export default class Activity_Chart extends PureComponent {
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                 data={this.props.data}
-                margin={{top: 90}}
+                margin={{top: 60}}
                 >
-                <CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[90, 185]} />
+                <CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[60, 140]} />
                 <XAxis 
                   dataKey="day"  
                   interval='preserveStartEnd' 
@@ -54,7 +54,7 @@ export default class Activity_Chart extends PureComponent {
                     domain={[0, 'auto']} 
                     tickCount={3}
                     tickSize='0'
-                    tickMargin='20'
+                    tickMargin='15'
                     width={55}
                 />
                 <Tooltip wrapperStyle={{outline: "none"}} content={<CustomToolTipActivityChart />} cursor={false}/>

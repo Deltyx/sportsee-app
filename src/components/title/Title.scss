@@ -26,3 +26,16 @@
 .title-description {
     font-size: 18px;
 }
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .title {
+        font-size: 36px;
+    }
+    .title > h1 {
+        font-size: 36px;
+    }
+    .title-description {
+        font-size: 16px;
+    }
+}

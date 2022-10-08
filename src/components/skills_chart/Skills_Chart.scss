@@ -10,3 +10,11 @@
     justify-self: center;
     align-self: end;
 }
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .Skills_Chart-wrapper {
+        height: 200px;
+        width: 200px;
+    } 
+}

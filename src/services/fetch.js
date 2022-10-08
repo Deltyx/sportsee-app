@@ -1,7 +1,7 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from './../data/mockedData.js';
 
 const server = 'http://localhost:3000/'
-const MOCKED_DATA = false
+const MOCKED_DATA = true
 
 
 /**

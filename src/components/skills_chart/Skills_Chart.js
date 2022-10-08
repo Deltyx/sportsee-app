@@ -9,7 +9,7 @@ export default class Skills_Chart extends PureComponent {
     return (
       <div className='Skills_Chart-wrapper'>
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart outerRadius="65%" data={this.props.data}>
+          <RadarChart outerRadius="60%" data={this.props.data}>
             <PolarGrid radialLines={false} />
             <PolarAngleAxis 
               dataKey="kind" 

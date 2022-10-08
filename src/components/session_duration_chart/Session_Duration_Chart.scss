@@ -1,15 +1,20 @@
 @import './../../style/theme.scss';
 
-.Session_Duration_Chart-wrapper {
-    height: 256px;
-    width: 256px;
-    background: $primary-color;
-    border-radius: 5px;
-
-    position: relative;
+.Session_Duration_Chart {
     grid-row: 3;
     justify-self: start;
     align-self: end;
+
+    border-radius: 5px;
+    background-color: $primary-color;
+}
+
+.Session_Duration_Chart-wrapper {
+    height: 256px;
+    width: 256px;
+
+    border-radius: 5px;
+    position: relative;
 }
 
 .Session_Duration_Chart-title {
@@ -33,4 +38,12 @@
     color: black;
     font-size: 12px;
     font-weight: 600;
+}
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .Session_Duration_Chart-wrapper {
+        height: 200px;
+        width: 200px;
+    } 
 }

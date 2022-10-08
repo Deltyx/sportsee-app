@@ -66,3 +66,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* Small screen devices (780px and below) */
+@media only screen and (max-height: 780px) {
+    .Activity_Chart-wrapper {
+        height: 200px;
+        min-width: 256px;
+    }
+}
