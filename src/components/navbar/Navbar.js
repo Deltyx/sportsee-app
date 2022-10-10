@@ -8,10 +8,10 @@ export default function Navbar() {
     <header className='nav-container'>
       <img className='nav-logo' src={logo} alt={logo}/>
       <nav className='nav-links'>
-          <Link to='/'>Accueil</Link>
-          <Link to='/'>Profil</Link>
-          <Link to='/'>Réglages</Link>
-          <Link to='/'>Communauté</Link>
+          <Link to='#'>Accueil</Link>
+          <Link to='#'>Profil</Link>
+          <Link to='#'>Réglages</Link>
+          <Link to='#'>Communauté</Link>
       </nav>
     </header>
   );

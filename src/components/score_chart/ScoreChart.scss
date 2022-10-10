@@ -7,7 +7,9 @@
     width: 256px;
 
     background: $primary-background-color;
-    
+    display: flex;
+
+    justify-content: center;
 
     border-radius: 5px;
     grid-column: 3;
@@ -53,4 +55,10 @@
         height: 200px;
         width: 200px;
     } 
+
+    .Score_Chart-score-wrapper {
+        top: 30%;
+        left: 30%;
+
+    }
 }
