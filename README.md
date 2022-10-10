@@ -39,7 +39,7 @@ or
 
 1. Clone the repo of the front-end
 
-    `git clone https://github.com/July-github/SportSee.git`
+    `git clone https://github.com/Deltyx/sportsee-app`
 2. Install the dependencies by running the command 
 
     `yarn` (or `yarn install`) or `npm i` (or `npm install`)
