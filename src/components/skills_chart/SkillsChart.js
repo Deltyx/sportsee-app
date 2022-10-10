@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-import './Skills_Chart.scss';
+import './SkillsChart.scss';
 
-export default class Skills_Chart extends PureComponent {
+export default class SkillsChart extends PureComponent {
   render() {
     return (
       <div className='Skills_Chart-wrapper'>
@@ -26,6 +26,6 @@ export default class Skills_Chart extends PureComponent {
   }
 }
 
-Skills_Chart.propTypes={
+SkillsChart.propTypes={
   data: PropTypes.array.isRequired
 }

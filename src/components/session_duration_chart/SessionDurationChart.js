@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-import './Session_Duration_Chart.scss';
+import './SessionDurationChart.scss';
 
 /**
   * Format Tooltip
@@ -49,7 +49,7 @@ function customOnMouseOut(){
   sessionWrap.style.background ='transparent'
 }
 
-export default class Session_Duration_Chart extends PureComponent {
+export default class SessionDurationChart extends PureComponent {
   render() {
     return (
       <div className='Session_Duration_Chart'>
@@ -92,6 +92,6 @@ export default class Session_Duration_Chart extends PureComponent {
   }
 }
 
-Session_Duration_Chart.propTypes={
+SessionDurationChart.propTypes={
   data: PropTypes.array.isRequired,
 }

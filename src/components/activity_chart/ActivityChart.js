@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-import './Activity_Chart.scss';
+import './ActivityChart.scss';
 
 /**
   * Format Tooltip
@@ -23,7 +23,7 @@ function CustomToolTipActivityChart({payload, active}){
   return null
 }
 
-export default class Activity_Chart extends PureComponent {
+export default class ActivityChart extends PureComponent {
   render() {
     return (
         <div className='Activity_Chart-wrapper'>
@@ -79,6 +79,6 @@ export default class Activity_Chart extends PureComponent {
   }
 }
 
-Activity_Chart.propTypes={
+ActivityChart.propTypes={
   data: PropTypes.array.isRequired
 }

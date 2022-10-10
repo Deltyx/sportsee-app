@@ -1,8 +1,8 @@
-import './Nutrition_Card.scss';
+import './NutritionCard.scss';
 
 import PropTypes from 'prop-types';
 
-export default function Nutrition_Card({icon, data, id, type}){
+export default function NutritionCard({icon, data, id, type}){
     
     return(
         <div className='Nutrition_Card-wrapper' key={id}>
@@ -15,7 +15,7 @@ export default function Nutrition_Card({icon, data, id, type}){
     )
 }
 
-Nutrition_Card.propTypes={
+NutritionCard.propTypes={
     data: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,

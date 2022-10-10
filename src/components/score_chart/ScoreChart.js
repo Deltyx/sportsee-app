@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis  } from 'recharts';
 import PropTypes from 'prop-types';
 
-import './Score_Chart.scss';
+import './ScoreChart.scss';
 
-export default class Score_Chart extends PureComponent {
+export default class ScoreChart extends PureComponent {
 
   render() {
     return (
@@ -39,7 +39,7 @@ export default class Score_Chart extends PureComponent {
   }
 }
 
-Score_Chart.propTypes={
+ScoreChart.propTypes={
     data: PropTypes.array.isRequired,
     score: PropTypes.string.isRequired
 }

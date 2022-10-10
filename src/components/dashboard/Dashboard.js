@@ -1,11 +1,11 @@
 import './Dashboard.scss';
 
 import Sidebar from '../sidebar/Sidebar';
-import Skills_Chart from '../skills_chart/Skills_Chart';
-import Session_Duration_Chart from '../session_duration_chart/Session_Duration_Chart';
-import Score_Chart from '../score_chart/Score_Chart';
-import Activity_Chart from '../activity_chart/Activity_Chart';
-import Nutrition_Card from '../nutrition_card/Nutrition_Card';
+import SkillsChart from '../skills_chart/SkillsChart';
+import SessionDurationChart from '../session_duration_chart/SessionDurationChart';
+import ScoreChart from '../score_chart/ScoreChart';
+import ActivityChart from '../activity_chart/ActivityChart';
+import NutritionCard from '../nutrition_card/NutritionCard';
 
 import CaloriesIcon from '../../img/calories-icon.svg';
 import CarbsIcon from '../../img/carbs-icon.svg';
@@ -61,33 +61,33 @@ export default function Dashboard() {
       <Sidebar />
       <div className='dashboard-charts-container'>
         <Title firstName={userInfo.userInfos.firstName}/>
-        <Activity_Chart data={activityData}/>
-        <Session_Duration_Chart  data={sessionDurationData} />
-        <Skills_Chart data={dataReversed} />
-        <Score_Chart 
+        <ActivityChart data={activityData}/>
+        <SessionDurationChart  data={sessionDurationData} />
+        <SkillsChart data={dataReversed} />
+        <ScoreChart 
           data={[{score: userInfo.score * 100}]} 
           score={(userInfo.score * 100).toString()}
         />
       <aside className='nutrition_cards-wrapper'>
-        <Nutrition_Card 
+        <NutritionCard 
           icon={CaloriesIcon} 
           data={userData.keyData.calorieCount + "kCal"} 
           id={userData.id} 
           type='Calories'
         />
-        <Nutrition_Card 
+        <NutritionCard 
           icon={ProteinIcon} 
           data={userData.keyData.proteinCount + "g"} 
           id={userData.id} 
           type='Protéines'
         />
-        <Nutrition_Card 
+        <NutritionCard 
           icon={CarbsIcon} 
           data={userData.keyData.carbohydrateCount + "g"} 
           id={userData.id} 
           type='Glucides'
         />
-        <Nutrition_Card 
+        <NutritionCard 
           icon={FatIcon} 
           data={userData.keyData.lipidCount + "g"} 
           id={userData.id} 
