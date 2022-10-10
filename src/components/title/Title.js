@@ -12,5 +12,5 @@ export default function Title({firstName}){
 }
 
 Title.propTypes = {
-    firstname: PropTypes.string.isRequired
+    firstName: PropTypes.string.isRequired
 }

@@ -45,7 +45,7 @@ function customMouseMove(e){
   * @returns initial background
 */
 function customOnMouseOut(){
-  let sessionWrap = document.querySelector('.sessionDurationWrap');
+  let sessionWrap = document.querySelector('.Session_Duration_Chart-wrapper');
   sessionWrap.style.background ='transparent'
 }
 
